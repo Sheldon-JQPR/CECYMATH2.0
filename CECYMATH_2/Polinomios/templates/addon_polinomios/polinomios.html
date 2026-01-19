@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
+    <title>Polinomios</title>
+</head>
+<body>
+    <h1>Addon de Polinomios</h1>
+    
+    <div class="info-polinomios">
+        <h2>¿Qué es un Polinomio?</h2>
+        <p>Un <strong>polinomio</strong> es una expresión algebraica formada por términos que contienen variables elevadas a potencias enteras no negativas, multiplicadas por coeficientes.</p>
+        
+        <h3>Componentes de un Polinomio:</h3>
+        <ul>
+            <li><strong>Términos:</strong> Cada parte del polinomio separada por + o -</li>
+            <li><strong>Coeficientes:</strong> Los números que multiplican a las variables</li>
+            <li><strong>Variables:</strong> Las letras que representan valores desconocidos (usualmente x)</li>
+            <li><strong>Exponentes (Grado):</strong> Las potencias de la variable</li>
+        </ul>
+        
+        <h3>Grado de un Polinomio:</h3>
+        <p>El grado de un polinomio es el exponente mayor de la variable.</p>
+        <ul>
+            <li><strong>Grado 1:</strong> Polinomio lineal. Ejemplo: 2x + 3</li>
+            <li><strong>Grado 2:</strong> Polinomio cuadrático. Ejemplo: x² + 2x + 1</li>
+            <li><strong>Grado 3:</strong> Polinomio cúbico. Ejemplo: x³ + 2x² + x + 1</li>
+        </ul>
+        
+        <h3>Ejemplo Práctico:</h3>
+        <p>Evaluar el polinomio <strong>x² + 2x + 1</strong> cuando x = 3:</p>
+        <p>3² + 2(3) + 1 = 9 + 6 + 1 = <strong>16</strong></p>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        <h3>Evaluar: ax² + bx + c</h3>
+        
+        <label for="a">Coeficiente a (para x²):</label>
+        <input type="number" name="a" id="a" placeholder="ingresa a" required>
+        
+        <label for="b">Coeficiente b (para x):</label>
+        <input type="number" name="b" id="b" placeholder="ingresa b" required>
+        
+        <label for="c">Término independiente c:</label>
+        <input type="number" name="c" id="c" placeholder="ingresa c" required>
+        
+        <label for="x">Valor de x:</label>
+        <input type="number" name="x" id="x" placeholder="ingresa el valor de x" required>
+        
+        <button type="submit">Evaluar Polinomio</button>
+    </form>
+    {% if error %}
+        <h2 style="color:crimson">Error: {{ error }}</h2>
+    {% elif resultado is not None %}
+        <h2>Resultado: {{ resultado }}</h2>
+    {% endif %}
+
+</body>
+</html>

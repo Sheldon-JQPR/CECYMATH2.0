@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CECYMATH 2.0{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'estilo/estilo.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="/">🎓 CECYMATH 2.0</a>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/addon_/suma">✚ Suma</a></li>
+                <li><a href="/addon_/resta">➖ Resta</a></li>
+                <li><a href="/addon_/multiplicacion">✖️ Multiplicación</a></li>
+                <li><a href="/addon_/division">➗ División</a></li>
+                <li><a href="/addon_/ecuaciones_1er_grado">📝 Ecuaciones 1er Grado</a></li>
+                <li><a href="/addon_/formula_general">🔢 Fórmula General</a></li>
+                <li><a href="/addon_/polinomios">📊 Polinomios</a></li>
+                <li><a href="/addon_/factorizacion">🔍 Factorización</a></li>
+                <li><a href="/addon_/figuras_planas">🔷 Figuras</a></li>
+                <li><a href="/addon_/jerarquia_operaciones">⚙️ Jerarquía</a></li>
+                <li><a href="/addon_/recta_numerica">📏 Recta</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 CECYMATH 2.0 - Plataforma Educativa de Matemáticas</p>
+    </footer>
+</body>
+</html>

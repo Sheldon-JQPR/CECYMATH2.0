@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Resta - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>📊 Resta de Números Reales</h1>
+    
+    <div class="info-resta">
+        <h2>1. Concepto Fundamental</h2>
+        <p>La <strong>resta</strong> es una operación aritmética que consiste en quitar, sustraer o disminuir una cantidad de otra para obtener el resultado o diferencia. Es la operación inversa a la suma.</p>
+        
+        <h3>Notación Matemática</h3>
+        <div class="formula">
+            a - b = c
+        </div>
+        <p>Donde:</p>
+        <ul>
+            <li><strong>a:</strong> Es el <em>minuendo</em> (el número del que se resta)</li>
+            <li><strong>b:</strong> Es el <em>sustraendo</em> (el número que se resta)</li>
+            <li><strong>c:</strong> Es la <em>diferencia</em> o <em>resultado</em></li>
+            <li><strong>-:</strong> Es el símbolo de operación de resta</li>
+        </ul>
+
+        <h2>2. Propiedades Matemáticas de la Resta</h2>
+        
+        <h3>a) NO es Propiedad Conmutativa</h3>
+        <p>El orden de los números SÍ importa en la resta.</p>
+        <div class="formula">a - b ≠ b - a</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 10 - 3 = 7, pero 3 - 10 = -7</div>
+            <p>El orden cambió completamente el resultado</p>
+        </div>
+
+        <h3>b) NO es Propiedad Asociativa</h3>
+        <p>La forma en que agrupamos los números SÍ cambia el resultado.</p>
+        <div class="formula">(a - b) - c ≠ a - (b - c)</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: (10 - 3) - 2 = 5, pero 10 - (3 - 2) = 9</div>
+            <p>Paso 1: 7 - 2 = 5 (lado izquierdo)</p>
+            <p>Paso 2: 10 - 1 = 9 (lado derecho)</p>
+        </div>
+
+        <h3>c) Elemento Neutro</h3>
+        <p>Restar cero de cualquier número da como resultado el mismo número.</p>
+        <div class="formula">a - 0 = a</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 15 - 0 = 15</div>
+        </div>
+
+        <h3>d) Relación con la Suma</h3>
+        <p>La resta es la operación inversa de la suma.</p>
+        <div class="formula">Si a - b = c, entonces a = b + c</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 10 - 3 = 7, y verificamos que 3 + 7 = 10</div>
+        </div>
+
+        <h2>3. Ejemplos Resueltos Paso a Paso</h2>
+        
+        <h3>Ejemplo 1: Resta Simple sin Préstamo</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 45 - 12</div>
+            <p><strong>Paso 1:</strong> Escribir los números alineados</p>
+            <p style="margin-left: 20px; font-family: monospace;">  45<br>- 12</p>
+            <p><strong>Paso 2:</strong> Restar las unidades (5 - 2 = 3)</p>
+            <p><strong>Paso 3:</strong> Restar las decenas (4 - 1 = 3)</p>
+            <p><strong>Respuesta:</strong> 33</p>
+        </div>
+
+        <h3>Ejemplo 2: Resta con Préstamo</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 32 - 15</div>
+            <p><strong>Paso 1:</strong> Escribir los números alineados</p>
+            <p style="margin-left: 20px; font-family: monospace;">  32<br>- 15</p>
+            <p><strong>Paso 2:</strong> Restar las unidades (2 - 5 no se puede)</p>
+            <p><strong>Paso 3:</strong> Pedir prestado 1 decena (12 - 5 = 7)</p>
+            <p><strong>Paso 4:</strong> Restar las decenas (3 - 1 - 1 = 1)</p>
+            <p><strong>Respuesta:</strong> 17</p>
+        </div>
+
+        <h3>Ejemplo 3: Resta con Decimales</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 15.7 - 8.3</div>
+            <p><strong>Paso 1:</strong> Alinear los puntos decimales</p>
+            <p style="margin-left: 20px; font-family: monospace;">15.7<br>- 8.3</p>
+            <p><strong>Paso 2:</strong> Restar décimas (7 - 3 = 4)</p>
+            <p><strong>Paso 3:</strong> Restar unidades (5 - 8 no se puede, pedir prestado)</p>
+            <p><strong>Paso 4:</strong> 15 - 8 = 7</p>
+            <p><strong>Respuesta:</strong> 7.4</p>
+        </div>
+
+        <h3>Ejemplo 4: Resta de Números Negativos</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: -5 - (-3)</div>
+            <p><strong>Paso 1:</strong> Recordar que restar un negativo es sumar su opuesto</p>
+            <p><strong>Paso 2:</strong> Convertir: -5 - (-3) = -5 + 3</p>
+            <p><strong>Paso 3:</strong> Resolver: -5 + 3 = -2</p>
+            <p><strong>Respuesta:</strong> -2</p>
+        </div>
+
+        <h2>4. Aplicaciones Prácticas</h2>
+        <ul>
+            <li><strong>Contabilidad:</strong> Calcular pérdidas o gastos (ingresos - gastos)</li>
+            <li><strong>Comercio:</strong> Calcular cambio (dinero entregado - precio del producto)</li>
+            <li><strong>Temperaturas:</strong> Diferencias de temperatura entre dos momentos</li>
+            <li><strong>Distancias:</strong> Diferencia de distancias recorridas</li>
+            <li><strong>Edades:</strong> Calcular diferencia de edades entre personas</li>
+            <li><strong>Inventarios:</strong> Productos restantes (inicial - vendido)</li>
+        </ul>
+
+        <h2>5. Referencias y Recursos</h2>
+        <div class="recursos">
+            <h3>📚 Libros Recomendados</h3>
+            <ul>
+                <li>Baldor, A. (2006). <em>Álgebra Elemental</em>. Grupo Editorial Patria.</li>
+                <li>Jiménez, R. (2011). <em>Matemáticas I</em>. Pearson Educación.</li>
+                <li>Zill, D. & Dewar, J. (2012). <em>Álgebra, Trigonometría y Geometría Analítica</em>. McGraw-Hill.</li>
+            </ul>
+            <h3>🌐 Recursos en Español</h3>
+            <ul>
+                <li><a href="https://es.khanacademy.org/math/arithmetic" target="_blank">Khan Academy España - Aritmética</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=resta+basica+matematicas+español" target="_blank">YouTube - Tutoriales de Resta en Español</a></li>
+                <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">Matemáticas profe Alex - Canal de YouTube</a></li>
+            </ul>
+            <h3>📹 Canales Educativos en Español</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">🎬 Matemáticas profe Alex</a></li>
+                <li><a href="https://www.youtube.com/@julioprofe" target="_blank">🎬 Julio Profe - Matemáticas</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=resta+numeros+enteros+explicacion+español" target="_blank">🔍 Búsqueda: Resta de Números Enteros</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>6. Calculadora Interactiva de Resta</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="numero1">Minuendo:</label>
+        <input type="number" name="numero1" id="numero1" placeholder="Ingresa el minuendo" required step="any">
+        
+        <label for="numero2">Sustraendo:</label>
+        <input type="number" name="numero2" id="numero2" placeholder="Ingresa el sustraendo" required step="any">
+        
+        <button type="submit">Calcular Resta</button>
+    </form>
+
+    {% if error %}
+        <div class="error">
+            <strong>❌ Error:</strong> {{ error }}
+        </div>
+    {% elif total is not None %}
+        <div class="resultado">
+            <strong>✅ Resultado:</strong> {{ total }}
+        </div>
+    {% endif %}
+
+{% endblock %}

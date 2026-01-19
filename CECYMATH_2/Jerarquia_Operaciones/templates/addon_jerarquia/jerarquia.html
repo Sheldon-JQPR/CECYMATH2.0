@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
+    <title>Jerarquía de Operaciones</title>
+</head>
+<body>
+    <h1>Addon de Jerarquía de Operaciones</h1>
+    
+    <div class="info-jerarquia">
+        <h2>¿Qué es la Jerarquía de Operaciones?</h2>
+        <p>La <strong>jerarquía de operaciones</strong> es el conjunto de reglas que se deben seguir para resolver operaciones matemáticas en el orden correcto.</p>
+        
+        <h3>Orden de Operaciones (PEMDAS):</h3>
+        <ol>
+            <li><strong>P - Paréntesis:</strong> Resolver primero lo que está dentro de los paréntesis.</li>
+            <li><strong>E - Exponentes:</strong> Calcular las potencias y raíces.</li>
+            <li><strong>MD - Multiplicación y División:</strong> De izquierda a derecha.</li>
+            <li><strong>AS - Adición y Sustracción:</strong> De izquierda a derecha.</li>
+        </ol>
+        
+        <h3>Regla Mnemotécnica:</h3>
+        <p><strong>PEMDAS</strong> (Paréntesis, Exponentes, Multiplicación/División, Adición/Sustracción)</p>
+        
+        <h3>Ejemplo Práctico:</h3>
+        <p>Resolver: <strong>2 + 3 × 4</strong></p>
+        <p>Paso 1: Primero la multiplicación: 3 × 4 = 12</p>
+        <p>Paso 2: Luego la suma: 2 + 12 = <strong>14</strong></p>
+        <p>(Si no seguimos la jerarquía: 2 + 3 = 5, luego 5 × 4 = 20, lo cual es incorrecto)</p>
+        
+        <h3>Otro Ejemplo:</h3>
+        <p>Resolver: <strong>(2 + 3) × 4</strong></p>
+        <p>Paso 1: Primero los paréntesis: 2 + 3 = 5</p>
+        <p>Paso 2: Luego la multiplicación: 5 × 4 = <strong>20</strong></p>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="expresion">Ingresa una expresión matemática:</label>
+        <input type="text" name="expresion" id="expresion" placeholder="Ejemplo: 2 + 3 * 4" required>
+        <button type="submit">Calcular</button>
+        <p><small>Usa: + (suma), - (resta), * (multiplicación), / (división), ** (potencia), ( ) (paréntesis)</small></p>
+    </form>
+    
+    {% if error %}
+        <h2 style="color:crimson">Error: {{ error }}</h2>
+    {% elif resultado is not None %}
+        <h2>Expresión: {{ expresion }}</h2>
+        <h2>Resultado: {{ resultado }}</h2>
+    {% endif %}
+
+</body>
+</html>

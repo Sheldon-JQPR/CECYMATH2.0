@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Suma - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>📊 Suma de Números Reales</h1>
+    
+    <div class="info-suma">
+        <h2>1. Concepto Fundamental</h2>
+        <p>La <strong>suma</strong> es una operación aritmética que consiste en reunir o juntar dos o más cantidades para obtener una cantidad total. Es la operación matemática más elemental y fundamental en la aritmética.</p>
+        
+        <h3>Notación Matemática</h3>
+        <div class="formula">
+            a + b = c
+        </div>
+        <p>Donde:</p>
+        <ul>
+            <li><strong>a y b:</strong> Son los <em>sumandos</em> (los números a sumar)</li>
+            <li><strong>c:</strong> Es la <em>suma</em> o <em>resultado</em></li>
+            <li><strong>+:</strong> Es el símbolo de operación de suma</li>
+        </ul>
+
+        <h2>2. Propiedades Matemáticas de la Suma</h2>
+        
+        <h3>a) Propiedad Conmutativa</h3>
+        <p>El orden de los sumandos no altera el resultado.</p>
+        <div class="formula">a + b = b + a</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 5 + 3 = 3 + 5 = 8</div>
+            <p>Sin importar el orden, siempre obtenemos 8</p>
+        </div>
+
+        <h3>b) Propiedad Asociativa</h3>
+        <p>La forma en que agrupamos los números no cambia el resultado.</p>
+        <div class="formula">(a + b) + c = a + (b + c)</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: (2 + 3) + 4 = 2 + (3 + 4) = 9</div>
+            <p>Paso 1: 5 + 4 = 9 (lado izquierdo)</p>
+            <p>Paso 2: 2 + 7 = 9 (lado derecho)</p>
+        </div>
+
+        <h3>c) Elemento Neutro (Identidad Aditiva)</h3>
+        <p>La suma de cualquier número con cero (0) da como resultado el mismo número.</p>
+        <div class="formula">a + 0 = a</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 15 + 0 = 15</div>
+        </div>
+
+        <h3>d) Elemento Opuesto (Inverso Aditivo)</h3>
+        <p>La suma de un número y su opuesto es igual a cero.</p>
+        <div class="formula">a + (-a) = 0</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 7 + (-7) = 0</div>
+        </div>
+
+        <h2>3. Ejemplos Resueltos Paso a Paso</h2>
+        
+        <h3>Ejemplo 1: Suma Simple</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 23 + 17</div>
+            <p><strong>Paso 1:</strong> Escribir los números</p>
+            <p style="margin-left: 20px;">23 + 17</p>
+            <p><strong>Paso 2:</strong> Sumar unidades (3 + 7 = 10), escribir 0 y llevar 1</p>
+            <p><strong>Paso 3:</strong> Sumar decenas (2 + 1 + 1 = 4)</p>
+            <p><strong>Respuesta:</strong> 40</p>
+        </div>
+
+        <h3>Ejemplo 2: Suma con Decimales</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 12.5 + 8.3</div>
+            <p><strong>Paso 1:</strong> Alinear los puntos decimales</p>
+            <p style="margin-left: 20px; font-family: monospace;">12.5<br>+ 8.3</p>
+            <p><strong>Paso 2:</strong> Sumar décimas (5 + 3 = 8)</p>
+            <p><strong>Paso 3:</strong> Sumar unidades (2 + 8 = 10), escribir 0 y llevar 1</p>
+            <p><strong>Paso 4:</strong> Sumar decenas (1 + 1 = 2)</p>
+            <p><strong>Respuesta:</strong> 20.8</p>
+        </div>
+
+        <h3>Ejemplo 3: Suma de Números Negativos</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: -5 + (-3)</div>
+            <p><strong>Paso 1:</strong> Cuando sumamos dos negativos, el resultado es negativo</p>
+            <p><strong>Paso 2:</strong> Sumar los valores absolutos: |−5| + |−3| = 5 + 3 = 8</p>
+            <p><strong>Paso 3:</strong> Añadir el signo negativo</p>
+            <p><strong>Respuesta:</strong> -8</p>
+        </div>
+
+        <h3>Ejemplo 4: Suma de Números con Signos Diferentes</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 10 + (-7)</div>
+            <p><strong>Paso 1:</strong> El número con mayor valor absoluto es 10</p>
+            <p><strong>Paso 2:</strong> Restar: 10 - 7 = 3</p>
+            <p><strong>Paso 3:</strong> El signo es del número mayor (10 es positivo)</p>
+            <p><strong>Respuesta:</strong> 3</p>
+        </div>
+
+        <h2>4. Aplicaciones Prácticas</h2>
+        <ul>
+            <li><strong>Comercio:</strong> Sumar precios de productos para obtener el total de compra</li>
+            <li><strong>Contabilidad:</strong> Sumar ingresos o gastos para obtener totales</li>
+            <li><strong>Medicina:</strong> Sumar dosis de medicamentos</li>
+            <li><strong>Construcción:</strong> Sumar medidas de materiales</li>
+            <li><strong>Ciencias:</strong> Sumar resultados de mediciones</li>
+        </ul>
+
+        <h2>5. Referencias y Recursos</h2>
+        <div class="recursos">
+            <h3>📚 Libros Recomendados</h3>
+            <ul>
+                <li>Baldor, A. (2006). <em>Álgebra Elemental</em>. Grupo Editorial Patria.</li>
+                <li>Jiménez, R. (2011). <em>Matemáticas I</em>. Pearson Educación.</li>
+                <li>Zill, D. & Dewar, J. (2012). <em>Álgebra, Trigonometría y Geometría Analítica</em>. McGraw-Hill.</li>
+            </ul>
+            <h3>🌐 Recursos en Español</h3>
+            <ul>
+                <li><a href="https://es.khanacademy.org/math/arithmetic" target="_blank">Khan Academy España - Aritmética</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=suma+basica+matematicas+español" target="_blank">YouTube - Tutoriales de Suma en Español</a></li>
+                <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">Matemáticas profe Alex - Canal de YouTube</a></li>
+            </ul>
+            <h3>📹 Canales Educativos en Español</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">🎬 Matemáticas profe Alex</a></li>
+                <li><a href="https://www.youtube.com/@julioprofe" target="_blank">🎬 Julio Profe - Matemáticas</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=suma+numeros+enteros+explicacion+español" target="_blank">🔍 Búsqueda: Suma de Números Enteros</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>6. Calculadora Interactiva de Suma</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="numero1">Primer número:</label>
+        <input type="number" name="numero1" id="numero1" placeholder="Ingresa el primer número" required step="any">
+        
+        <label for="numero2">Segundo número:</label>
+        <input type="number" name="numero2" id="numero2" placeholder="Ingresa el segundo número" required step="any">
+        
+        <button type="submit">Calcular Suma</button>
+    </form>
+
+    {% if error %}
+        <div class="error">
+            <strong>❌ Error:</strong> {{ error }}
+        </div>
+    {% elif total is not None %}
+        <div class="resultado">
+            <strong>✅ Resultado:</strong> {{ total }}
+        </div>
+    {% endif %}
+
+{% endblock %}

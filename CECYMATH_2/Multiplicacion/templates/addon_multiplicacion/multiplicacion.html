@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Multiplicación - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>📊 Multiplicación de Números Reales</h1>
+    
+    <div class="info-multiplicacion">
+        <h2>1. Concepto Fundamental</h2>
+        <p>La <strong>multiplicación</strong> es una operación aritmética que consiste en repetir un número (multiplicando) tantas veces como indica otro número (multiplicador) para obtener un producto. Es una forma abreviada de realizar sumas repetidas.</p>
+        
+        <h3>Notación Matemática</h3>
+        <div class="formula">
+            a × b = c
+        </div>
+        <p>Donde:</p>
+        <ul>
+            <li><strong>a:</strong> Es el <em>multiplicando</em> (el número que se repite)</li>
+            <li><strong>b:</strong> Es el <em>multiplicador</em> (cuántas veces se repite)</li>
+            <li><strong>c:</strong> Es el <em>producto</em> o <em>resultado</em></li>
+            <li><strong>×:</strong> Es el símbolo de operación de multiplicación (también se usa * o •)</li>
+        </ul>
+
+        <h2>2. Propiedades Matemáticas de la Multiplicación</h2>
+        
+        <h3>a) Propiedad Conmutativa</h3>
+        <p>El orden de los factores no altera el producto.</p>
+        <div class="formula">a × b = b × a</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 3 × 5 = 5 × 3 = 15</div>
+            <p>Sin importar el orden, siempre obtenemos 15</p>
+        </div>
+
+        <h3>b) Propiedad Asociativa</h3>
+        <p>La forma en que agrupamos los factores no cambia el producto.</p>
+        <div class="formula">(a × b) × c = a × (b × c)</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: (2 × 3) × 4 = 2 × (3 × 4) = 24</div>
+            <p>Paso 1: 6 × 4 = 24 (lado izquierdo)</p>
+            <p>Paso 2: 2 × 12 = 24 (lado derecho)</p>
+        </div>
+
+        <h3>c) Propiedad Distributiva</h3>
+        <p>La multiplicación se distribuye sobre la suma.</p>
+        <div class="formula">a × (b + c) = (a × b) + (a × c)</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 3 × (2 + 4) = (3 × 2) + (3 × 4) = 6 + 12 = 18</div>
+        </div>
+
+        <h3>d) Elemento Neutro (Identidad Multiplicativa)</h3>
+        <p>La multiplicación de cualquier número por 1 da como resultado el mismo número.</p>
+        <div class="formula">a × 1 = a</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 25 × 1 = 25</div>
+        </div>
+
+        <h3>e) Elemento Absorbente</h3>
+        <p>La multiplicación de cualquier número por cero da como resultado cero.</p>
+        <div class="formula">a × 0 = 0</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 100 × 0 = 0</div>
+        </div>
+
+        <h2>3. Ejemplos Resueltos Paso a Paso</h2>
+        
+        <h3>Ejemplo 1: Multiplicación Simple</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 12 × 3</div>
+            <p><strong>Paso 1:</strong> Escribir los números</p>
+            <p style="margin-left: 20px;">12 × 3</p>
+            <p><strong>Paso 2:</strong> Multiplicar 3 × 2 = 6</p>
+            <p><strong>Paso 3:</strong> Multiplicar 3 × 1 = 3</p>
+            <p><strong>Respuesta:</strong> 36</p>
+        </div>
+
+        <h3>Ejemplo 2: Multiplicación de Dos Dígitos</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 23 × 12</div>
+            <p><strong>Paso 1:</strong> Multiplicar por las unidades (23 × 2 = 46)</p>
+            <p><strong>Paso 2:</strong> Multiplicar por las decenas (23 × 1 = 23, correr una posición: 230)</p>
+            <p><strong>Paso 3:</strong> Sumar los resultados (46 + 230 = 276)</p>
+            <p><strong>Respuesta:</strong> 276</p>
+        </div>
+
+        <h3>Ejemplo 3: Multiplicación con Decimales</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 2.5 × 4</div>
+            <p><strong>Paso 1:</strong> Ignorar el decimal: 25 × 4 = 100</p>
+            <p><strong>Paso 2:</strong> Contar decimales en los factores: 2.5 tiene 1 decimal</p>
+            <p><strong>Paso 3:</strong> Colocar el decimal: 10.0 = 10</p>
+            <p><strong>Respuesta:</strong> 10</p>
+        </div>
+
+        <h3>Ejemplo 4: Multiplicación de Números Negativos</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: (-5) × 3</div>
+            <p><strong>Paso 1:</strong> Regla: negativo × positivo = negativo</p>
+            <p><strong>Paso 2:</strong> Multiplicar los valores absolutos: 5 × 3 = 15</p>
+            <p><strong>Paso 3:</strong> Aplicar el signo negativo</p>
+            <p><strong>Respuesta:</strong> -15</p>
+        </div>
+
+        <h3>Ejemplo 5: Multiplicación de Dos Números Negativos</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: (-4) × (-6)</div>
+            <p><strong>Paso 1:</strong> Regla: negativo × negativo = positivo</p>
+            <p><strong>Paso 2:</strong> Multiplicar los valores absolutos: 4 × 6 = 24</p>
+            <p><strong>Respuesta:</strong> 24</p>
+        </div>
+
+        <h2>4. Aplicaciones Prácticas</h2>
+        <ul>
+            <li><strong>Comercio:</strong> Calcular costo total (precio unitario × cantidad)</li>
+            <li><strong>Construcción:</strong> Calcular áreas (largo × ancho)</li>
+            <li><strong>Finanzas:</strong> Calcular intereses y ganancias</li>
+            <li><strong>Recetas:</strong> Multiplicar ingredientes por el número de porciones</li>
+            <li><strong>Velocidad:</strong> Calcular distancia (velocidad × tiempo)</li>
+            <li><strong>Energía:</strong> Calcular potencia y consumo eléctrico</li>
+        </ul>
+
+        <h2>5. Referencias y Recursos</h2>
+        <div class="recursos">
+            <h3>📚 Libros Recomendados</h3>
+            <ul>
+                <li>Baldor, A. (2006). <em>Álgebra Elemental</em>. Grupo Editorial Patria.</li>
+                <li>Jiménez, R. (2011). <em>Matemáticas I</em>. Pearson Educación.</li>
+                <li>Zill, D. & Dewar, J. (2012). <em>Álgebra, Trigonometría y Geometría Analítica</em>. McGraw-Hill.</li>
+            </ul>
+            <h3>🌐 Recursos en Español</h3>
+            <ul>
+                <li><a href="https://es.khanacademy.org/math/arithmetic" target="_blank">Khan Academy España - Aritmética</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=multiplicacion+basica+matematicas+español" target="_blank">YouTube - Tutoriales de Multiplicación en Español</a></li>
+                <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">Matemáticas profe Alex - Canal de YouTube</a></li>
+            </ul>
+            <h3>📹 Canales Educativos en Español</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">🎬 Matemáticas profe Alex</a></li>
+                <li><a href="https://www.youtube.com/@julioprofe" target="_blank">🎬 Julio Profe - Matemáticas</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=multiplicacion+numeros+enteros+explicacion+español" target="_blank">🔍 Búsqueda: Multiplicación de Números</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>6. Calculadora Interactiva de Multiplicación</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="numero1">Primer número:</label>
+        <input type="number" name="numero1" id="numero1" placeholder="Ingresa el primer número" required step="any">
+        
+        <label for="numero2">Segundo número:</label>
+        <input type="number" name="numero2" id="numero2" placeholder="Ingresa el segundo número" required step="any">
+        
+        <button type="submit">Calcular Multiplicación</button>
+    </form>
+
+    {% if error %}
+        <div class="error">
+            <strong>❌ Error:</strong> {{ error }}
+        </div>
+    {% elif total is not None %}
+        <div class="resultado">
+            <strong>✅ Resultado:</strong> {{ total }}
+        </div>
+    {% endif %}
+
+{% endblock %}

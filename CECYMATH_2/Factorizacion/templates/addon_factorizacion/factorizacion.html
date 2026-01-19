@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
+    <title>Factorización</title>
+</head>
+<body>
+    <h1>Addon de Factorización</h1>
+    
+    <div class="info-factorizacion">
+        <h2>¿Qué es la Factorización?</h2>
+        <p>La <strong>factorización</strong> es el proceso de expresar un número o expresión algebraica como un producto de factores.</p>
+        
+        <h3>Tipos de Factorización:</h3>
+        <ul>
+            <li><strong>Factorización de Números:</strong> Encontrar los divisores de un número.</li>
+            <li><strong>Factor Común:</strong> Extraer el factor que se repite en todos los términos.</li>
+            <li><strong>Diferencia de Cuadrados:</strong> a² - b² = (a + b)(a - b)</li>
+            <li><strong>Trinomio Cuadrado Perfecto:</strong> a² + 2ab + b² = (a + b)²</li>
+            <li><strong>Trinomio Cuadrático:</strong> ax² + bx + c = (px + q)(rx + s)</li>
+        </ul>
+        
+        <h3>Factores:</h3>
+        <p>Los factores de un número son todos los números que lo dividen exactamente sin dejar residuo.</p>
+        
+        <h3>Ejemplo Práctico:</h3>
+        <p>Los factores de 12 son: <strong>1, 2, 3, 4, 6, 12</strong></p>
+        <p>Porque: 12 ÷ 1 = 12, 12 ÷ 2 = 6, 12 ÷ 3 = 4, etc.</p>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="numero">Ingresa un número para encontrar sus factores:</label>
+        <input type="number" name="numero" id="numero" placeholder="ingresa un número" required>
+        
+        <button type="submit">Encontrar Factores</button>
+    </form>
+    {% if error %}
+        <h2 style="color:crimson">Error: {{ error }}</h2>
+    {% elif factores %}
+        <h2>Factores encontrados:</h2>
+        <p>{{ factores }}</p>
+    {% endif %}
+
+</body>
+</html>

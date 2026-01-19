@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Fórmula General - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>📐 Fórmula General (Ecuaciones Cuadráticas)</h1>
+    
+    <div class="info-ecuaciones">
+        <h2>1. Concepto Fundamental</h2>
+        <p>La <strong>Fórmula General</strong> es un método para resolver <strong>ecuaciones cuadráticas</strong> de la forma:</p>
+        <div class="formula">
+            ax² + bx + c = 0, donde a ≠ 0
+        </div>
+        <p>Esta fórmula permite encontrar los valores de <strong>x</strong> (llamadas raíces o soluciones) para cualquier ecuación cuadrática.</p>
+        
+        <h2>2. La Fórmula General</h2>
+        <div class="formula">
+            x = (-b ± √(b² - 4ac)) / (2a)
+        </div>
+        <p>Donde:</p>
+        <ul>
+            <li><strong>a:</strong> Coeficiente de x²</li>
+            <li><strong>b:</strong> Coeficiente de x</li>
+            <li><strong>c:</strong> Término independiente</li>
+            <li><strong>Δ (Discriminante):</strong> b² - 4ac</li>
+        </ul>
+        
+        <h2>3. Casos según el Discriminante</h2>
+        <div class="ejemplo">
+            <h4>Caso 1: Δ > 0 (Dos raíces reales diferentes)</h4>
+            <p>Si b² - 4ac > 0, la ecuación tiene dos soluciones reales distintas.</p>
+            <p>Ejemplo: x² - 5x + 6 = 0</p>
+            <p>Δ = (-5)² - 4(1)(6) = 25 - 24 = 1 > 0 ✓</p>
+            
+            <h4>Caso 2: Δ = 0 (Una raíz real doble)</h4>
+            <p>Si b² - 4ac = 0, la ecuación tiene una única solución real (raíz doble).</p>
+            <p>Ejemplo: x² - 4x + 4 = 0</p>
+            <p>Δ = (-4)² - 4(1)(4) = 16 - 16 = 0</p>
+            
+            <h4>Caso 3: Δ < 0 (Raíces complejas)</h4>
+            <p>Si b² - 4ac < 0, la ecuación NO tiene raíces reales.</p>
+            <p>Ejemplo: x² + x + 1 = 0</p>
+            <p>Δ = 1² - 4(1)(1) = 1 - 4 = -3 < 0</p>
+        </div>
+        
+        <h2>4. Ejemplos Resueltos Paso a Paso</h2>
+        
+        <div class="ejemplo">
+            <h4>Ejemplo 1: x² - 5x + 6 = 0</h4>
+            <p><strong>Identificar coeficientes:</strong> a = 1, b = -5, c = 6</p>
+            <p><strong>Calcular discriminante:</strong> Δ = (-5)² - 4(1)(6) = 25 - 24 = 1</p>
+            <p><strong>Aplicar fórmula:</strong></p>
+            <p>x = (5 ± √1) / 2 = (5 ± 1) / 2</p>
+            <p>x₁ = (5 + 1) / 2 = 3</p>
+            <p>x₂ = (5 - 1) / 2 = 2</p>
+            <p><strong>Solución:</strong> x = 3 ó x = 2</p>
+        </div>
+        
+        <div class="ejemplo">
+            <h4>Ejemplo 2: 2x² + 3x - 2 = 0</h4>
+            <p><strong>Identificar coeficientes:</strong> a = 2, b = 3, c = -2</p>
+            <p><strong>Calcular discriminante:</strong> Δ = 3² - 4(2)(-2) = 9 + 16 = 25</p>
+            <p><strong>Aplicar fórmula:</strong></p>
+            <p>x = (-3 ± √25) / (2·2) = (-3 ± 5) / 4</p>
+            <p>x₁ = (-3 + 5) / 4 = 2/4 = 0.5</p>
+            <p>x₂ = (-3 - 5) / 4 = -8/4 = -2</p>
+            <p><strong>Solución:</strong> x = 0.5 ó x = -2</p>
+        </div>
+        
+        <div class="ejemplo">
+            <h4>Ejemplo 3: x² - 6x + 9 = 0</h4>
+            <p><strong>Identificar coeficientes:</strong> a = 1, b = -6, c = 9</p>
+            <p><strong>Calcular discriminante:</strong> Δ = (-6)² - 4(1)(9) = 36 - 36 = 0</p>
+            <p><strong>Aplicar fórmula:</strong></p>
+            <p>x = (6 ± √0) / 2 = 6 / 2 = 3</p>
+            <p><strong>Solución:</strong> x = 3 (raíz doble)</p>
+        </div>
+        
+        <h2>5. Aplicaciones Prácticas</h2>
+        <div class="ejemplo">
+            <ul>
+                <li><strong>Física:</strong> Trayectorias parabólicas de proyectiles</li>
+                <li><strong>Ingeniería:</strong> Cálculo de estructuras y resistencia de materiales</li>
+                <li><strong>Economía:</strong> Análisis de beneficios y costos</li>
+                <li><strong>Arquitectura:</strong> Diseño de bóvedas y arcos parabólicos</li>
+                <li><strong>Agricultura:</strong> Rendimiento de cultivos en función de recursos</li>
+            </ul>
+        </div>
+        
+        <h2>6. Recursos y Referencias</h2>
+        <h3>📚 Libros Recomendados</h3>
+        <ul>
+            <li>Baldor, A. (2006). <em>Álgebra Elemental</em>. Grupo Editorial Patria.</li>
+            <li>Jiménez, R. (2011). <em>Matemáticas I</em>. Pearson Educación.</li>
+            <li>Zill, D. & Dewar, J. (2012). <em>Álgebra, Trigonometría y Geometría Analítica</em>. McGraw-Hill.</li>
+        </ul>
+        <h3>🌐 Recursos en Español</h3>
+        <ul>
+            <li><a href="https://es.khanacademy.org/math/algebra" target="_blank">Khan Academy España - Álgebra</a></li>
+            <li><a href="https://www.youtube.com/results?search_query=formula+general+ecuaciones+cuadraticas+español" target="_blank">YouTube - Tutoriales Fórmula General en Español</a></li>
+            <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">Matemáticas profe Alex - Canal de YouTube</a></li>
+        </ul>
+        <h3>📹 Canales Educativos en Español</h3>
+        <ul>
+            <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">🎬 Matemáticas profe Alex</a></li>
+            <li><a href="https://www.youtube.com/@julioprofe" target="_blank">🎬 Julio Profe - Matemáticas</a></li>
+            <li><a href="https://www.youtube.com/results?search_query=ecuaciones+cuadraticas+discriminante+español" target="_blank">🔍 Búsqueda: Ecuaciones Cuadráticas</a></li>
+        </ul>
+    </div>
+    
+    <h2>7. Calculadora de Fórmula General</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="a">Coeficiente a (x²):</label>
+        <input type="number" name="a" id="a" step="any" placeholder="Ej: 1" required>
+        
+        <label for="b">Coeficiente b (x):</label>
+        <input type="number" name="b" id="b" step="any" placeholder="Ej: -5" required>
+        
+        <label for="c">Coeficiente c (término independiente):</label>
+        <input type="number" name="c" id="c" step="any" placeholder="Ej: 6" required>
+        
+        <button type="submit">Resolver con Fórmula General</button>
+    </form>
+    
+    {% if error %}
+        <div class="error">❌ {{ error }}</div>
+    {% elif resultado %}
+        <div class="resultado">
+            <h3>✅ Solución:</h3>
+            {% if resultado.discriminante > 0 %}
+                <p><strong>Discriminante (Δ):</strong> {{ resultado.discriminante|floatformat:4 }} > 0</p>
+                <p><strong>Dos raíces reales diferentes:</strong></p>
+                <p>x₁ = <strong>{{ resultado.x1|floatformat:4 }}</strong></p>
+                <p>x₂ = <strong>{{ resultado.x2|floatformat:4 }}</strong></p>
+            {% elif resultado.discriminante == 0 %}
+                <p><strong>Discriminante (Δ):</strong> 0</p>
+                <p><strong>Una raíz real doble:</strong></p>
+                <p>x = <strong>{{ resultado.x1|floatformat:4 }}</strong></p>
+            {% else %}
+                <p><strong>Discriminante (Δ):</strong> {{ resultado.discriminante|floatformat:4 }} < 0</p>
+                <p><strong>NO hay raíces reales</strong> (raíces complejas)</p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
+    <title>Recta Numérica</title>
+</head>
+<body>
+    <h1>Addon de Recta Numérica</h1>
+    
+    <div class="info-recta">
+        <h2>¿Qué es una Recta Numérica?</h2>
+        <p>Una <strong>recta numérica</strong> es una representación gráfica de los números en una línea recta. Los números están ordenados de menor a mayor, generalmente de izquierda a derecha.</p>
+        
+        <h3>Características:</h3>
+        <ul>
+            <li><strong>Origen:</strong> Generalmente el número 0 está en el centro.</li>
+            <li><strong>Números Negativos:</strong> Se encuentran a la izquierda del 0.</li>
+            <li><strong>Números Positivos:</strong> Se encuentran a la derecha del 0.</li>
+            <li><strong>Orden:</strong> Los números aumentan de izquierda a derecha.</li>
+        </ul>
+        
+        <h3>Usos de la Recta Numérica:</h3>
+        <ul>
+            <li>Comparar números (cuál es mayor o menor).</li>
+            <li>Realizar sumas y restas visualmente.</li>
+            <li>Entender números positivos y negativos.</li>
+            <li>Representar intervalos de números.</li>
+        </ul>
+        
+        <h3>Ejemplo:</h3>
+        <p>-3  -2  -1  0  1  2  3  4  5</p>
+        <p>En esta recta, 3 es mayor que -2 porque está más a la derecha.</p>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="inicio">Valor inicial:</label>
+        <input type="number" name="inicio" id="inicio" placeholder="ingresa el valor inicial" required>
+        
+        <label for="fin">Valor final:</label>
+        <input type="number" name="fin" id="fin" placeholder="ingresa el valor final" required>
+        
+        <button type="submit">Generar Recta Numérica</button>
+    </form>
+    
+    {% if error %}
+        <h2 style="color:crimson">Error: {{ error }}</h2>
+    {% elif numeros %}
+        <h2>Recta Numérica:</h2>
+        <div style="text-align:center; font-size:18px; letter-spacing:5px;">
+            <span style="color: #7f8c8d; font-size: 24px; font-weight: bold;">-∞</span>
+            &nbsp;&nbsp;&nbsp;
+            {% for num in numeros %}
+                {% if num == 0 %}
+                    <strong style="color:red; background: #fff3cd; padding: 5px 8px; border-radius: 4px;">{{ num }}</strong>
+                {% else %}
+                    {{ num }}
+                {% endif %}
+                {% if not forloop.last %}&nbsp;&nbsp;&nbsp;{% endif %}
+            {% endfor %}
+            &nbsp;&nbsp;&nbsp;
+            <span style="color: #7f8c8d; font-size: 24px; font-weight: bold;">+∞</span>
+        </div>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
+    <title>Ecuaciones de Primer Grado</title>
+</head>
+<body>
+    <h1>Addon de Ecuaciones de Primer Grado</h1>
+    
+    <div class="info-ecuaciones">
+        <h2>¿Qué es una Ecuación de Primer Grado?</h2>
+        <p>Una <strong>ecuación de primer grado</strong> es una igualdad algebraica que contiene una variable con exponente 1. Se llama así porque la variable tiene un grado (potencia) de 1.</p>
+        
+        <h3>Forma General:</h3>
+        <p><strong>ax + b = c</strong></p>
+        <ul>
+            <li><strong>a:</strong> Coeficiente de la variable (no puede ser cero)</li>
+            <li><strong>x:</strong> La variable (incógnita)</li>
+            <li><strong>b:</strong> Término independiente</li>
+            <li><strong>c:</strong> El resultado de la igualdad</li>
+        </ul>
+        
+        <h3>Pasos para Resolver:</h3>
+        <ol>
+            <li>Escribe la ecuación en la forma ax + b = c</li>
+            <li>Resta b de ambos lados: ax = c - b</li>
+            <li>Divide entre a: x = (c - b) / a</li>
+        </ol>
+        
+        <h3>Ejemplo Práctico:</h3>
+        <p>Resolver: <strong>2x + 3 = 11</strong></p>
+        <p>x = (11 - 3) / 2 = 8 / 2 = <strong>4</strong></p>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="a">Coeficiente a (para ax):</label>
+        <input type="number" name="a" id="a" placeholder="ingresa a" required>
+        
+        <label for="b">Término b:</label>
+        <input type="number" name="b" id="b" placeholder="ingresa b" required>
+        
+        <label for="c">Resultado c:</label>
+        <input type="number" name="c" id="c" placeholder="ingresa c" required>
+        
+        <p>Resolviendo: <strong>ax + b = c</strong></p>
+        <button type="submit">Resolver Ecuación</button>
+    </form>
+    {% if error %}
+        <h2 style="color:crimson">Error: {{ error }}</h2>
+    {% elif resultado is not None %}
+        <h2>Solución: x = {{ resultado }}</h2>
+    {% endif %}
+
+</body>
+</html>

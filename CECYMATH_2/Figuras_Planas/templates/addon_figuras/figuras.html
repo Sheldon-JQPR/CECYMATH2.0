@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
+    <title>Figuras Planas</title>
+</head>
+<body>
+    <h1>Addon de Figuras Planas</h1>
+    
+    <div class="info-figuras">
+        <h2>¿Qué son las Figuras Planas?</h2>
+        <p>Las <strong>figuras planas</strong> son figuras geométricas bidimensionales (2D) que tienen longitud y ancho pero no profundidad. Se encuentran en un plano.</p>
+        
+        <h3>Propiedades Principales:</h3>
+        <ul>
+            <li><strong>Área:</strong> La medida de la superficie que ocupa la figura.</li>
+            <li><strong>Perímetro:</strong> La suma de las longitudes de todos los lados de la figura.</li>
+        </ul>
+        
+        <h3>Figuras Comunes:</h3>
+        <ul>
+            <li><strong>Círculo:</strong> Figura redonda sin ángulos.</li>
+            <li><strong>Cuadrado:</strong> Figura con 4 lados iguales y 4 ángulos rectos.</li>
+            <li><strong>Rectángulo:</strong> Figura con 4 lados (2 pares de lados iguales) y 4 ángulos rectos.</li>
+            <li><strong>Triángulo:</strong> Figura con 3 lados y 3 ángulos.</li>
+        </ul>
+        
+        <h3>Ejemplo Práctico:</h3>
+        <p>Para un cuadrado con lado de 5 cm:</p>
+        <p>Área = 5² = <strong>25 cm²</strong></p>
+        <p>Perímetro = 4 × 5 = <strong>20 cm</strong></p>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="figura">Selecciona una figura:</label>
+        <select name="figura" id="figura" required onchange="mostrarCampos()">
+            <option value="">-- Selecciona --</option>
+            <option value="circulo">Círculo</option>
+            <option value="cuadrado">Cuadrado</option>
+            <option value="rectangulo">Rectángulo</option>
+            <option value="triangulo">Triángulo</option>
+        </select>
+        
+        <!-- Campos para Círculo -->
+        <div id="circulo" style="display:none;">
+            <label for="radio">Radio:</label>
+            <input type="number" name="radio" id="radio" placeholder="ingresa el radio">
+        </div>
+        
+        <!-- Campos para Cuadrado -->
+        <div id="cuadrado" style="display:none;">
+            <label for="lado">Lado:</label>
+            <input type="number" name="lado" id="lado" placeholder="ingresa el lado">
+        </div>
+        
+        <!-- Campos para Rectángulo -->
+        <div id="rectangulo" style="display:none;">
+            <label for="base">Base:</label>
+            <input type="number" name="base" id="base" placeholder="ingresa la base">
+            <label for="altura">Altura:</label>
+            <input type="number" name="altura" id="altura" placeholder="ingresa la altura">
+        </div>
+        
+        <!-- Campos para Triángulo -->
+        <div id="triangulo" style="display:none;">
+            <label for="base_tri">Base:</label>
+            <input type="number" name="base" id="base_tri" placeholder="ingresa la base">
+            <label for="altura_tri">Altura:</label>
+            <input type="number" name="altura" id="altura_tri" placeholder="ingresa la altura">
+            <label for="lado1">Lado 1:</label>
+            <input type="number" name="lado1" id="lado1" placeholder="ingresa lado 1">
+            <label for="lado2">Lado 2:</label>
+            <input type="number" name="lado2" id="lado2" placeholder="ingresa lado 2">
+            <label for="lado3">Lado 3:</label>
+            <input type="number" name="lado3" id="lado3" placeholder="ingresa lado 3">
+        </div>
+        
+        <button type="submit">Calcular</button>
+    </form>
+    
+    {% if error %}
+        <h2 style="color:crimson">Error: {{ error }}</h2>
+    {% endif %}
+    
+    {% if area is not None %}
+        <h2>Resultados para {{ figura }}:</h2>
+        <p>Área: {{ area|floatformat:2 }}</p>
+        <p>Perímetro: {{ perimetro|floatformat:2 }}</p>
+    {% endif %}
+    
+    <script>
+        function mostrarCampos() {
+            const figura = document.getElementById('figura').value;
+            document.getElementById('circulo').style.display = 'none';
+            document.getElementById('cuadrado').style.display = 'none';
+            document.getElementById('rectangulo').style.display = 'none';
+            document.getElementById('triangulo').style.display = 'none';
+            
+            if (figura === 'circulo') {
+                document.getElementById('circulo').style.display = 'block';
+            } else if (figura === 'cuadrado') {
+                document.getElementById('cuadrado').style.display = 'block';
+            } else if (figura === 'rectangulo') {
+                document.getElementById('rectangulo').style.display = 'block';
+            } else if (figura === 'triangulo') {
+                document.getElementById('triangulo').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
