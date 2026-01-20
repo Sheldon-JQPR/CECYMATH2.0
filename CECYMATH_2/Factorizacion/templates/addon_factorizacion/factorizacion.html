@@ -1,12 +1,10 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
-    <title>Factorización</title>
-</head>
-<body>
-    <h1>Addon de Factorización</h1>
+
+{% block title %}Factorización - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>🔍 Factorización</h1>
     
     <div class="info-factorizacion">
         <h2>¿Qué es la Factorización?</h2>
@@ -37,11 +35,13 @@
         <button type="submit">Encontrar Factores</button>
     </form>
     {% if error %}
-        <h2 style="color:crimson">Error: {{ error }}</h2>
+        <div class="error">
+            <strong>❌ Error:</strong> {{ error }}
+        </div>
     {% elif factores %}
-        <h2>Factores encontrados:</h2>
-        <p>{{ factores }}</p>
+        <div class="resultado">
+            <strong>✅ Factores encontrados:</strong> {{ factores }}
+        </div>
     {% endif %}
 
-</body>
-</html>
+{% endblock %}

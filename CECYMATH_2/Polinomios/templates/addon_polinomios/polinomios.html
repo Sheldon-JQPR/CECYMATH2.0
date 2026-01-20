@@ -1,12 +1,10 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
-    <title>Polinomios</title>
-</head>
-<body>
-    <h1>Addon de Polinomios</h1>
+
+{% block title %}Polinomios - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>📊 Polinomios</h1>
     
     <div class="info-polinomios">
         <h2>¿Qué es un Polinomio?</h2>
@@ -52,10 +50,13 @@
         <button type="submit">Evaluar Polinomio</button>
     </form>
     {% if error %}
-        <h2 style="color:crimson">Error: {{ error }}</h2>
+        <div class="error">
+            <strong>❌ Error:</strong> {{ error }}
+        </div>
     {% elif resultado is not None %}
-        <h2>Resultado: {{ resultado }}</h2>
+        <div class="resultado">
+            <strong>✅ Resultado:</strong> {{ resultado }}
+        </div>
     {% endif %}
 
-</body>
-</html>
+{% endblock %}

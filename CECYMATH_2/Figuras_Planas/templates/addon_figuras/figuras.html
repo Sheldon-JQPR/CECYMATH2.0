@@ -1,12 +1,10 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
-    <title>Figuras Planas</title>
-</head>
-<body>
-    <h1>Addon de Figuras Planas</h1>
+
+{% block title %}Figuras Planas - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>🔷 Figuras Planas</h1>
     
     <div class="info-figuras">
         <h2>¿Qué son las Figuras Planas?</h2>
@@ -81,13 +79,17 @@
     </form>
     
     {% if error %}
-        <h2 style="color:crimson">Error: {{ error }}</h2>
+        <div class="error">
+            <strong>❌ Error:</strong> {{ error }}
+        </div>
     {% endif %}
     
     {% if area is not None %}
-        <h2>Resultados para {{ figura }}:</h2>
-        <p>Área: {{ area|floatformat:2 }}</p>
-        <p>Perímetro: {{ perimetro|floatformat:2 }}</p>
+        <div class="resultado">
+            <strong>✅ Resultados para {{ figura }}:</strong>
+            <p>Área: {{ area|floatformat:2 }}</p>
+            <p>Perímetro: {{ perimetro|floatformat:2 }}</p>
+        </div>
     {% endif %}
     
     <script>
@@ -110,5 +112,4 @@
         }
     </script>
 
-</body>
-</html>
+{% endblock %}

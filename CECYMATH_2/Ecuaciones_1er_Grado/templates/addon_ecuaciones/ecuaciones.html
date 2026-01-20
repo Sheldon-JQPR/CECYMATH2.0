@@ -1,57 +1,170 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
-    <title>Ecuaciones de Primer Grado</title>
-</head>
-<body>
-    <h1>Addon de Ecuaciones de Primer Grado</h1>
+
+{% block title %}Ecuaciones de Primer Grado - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>📝 Ecuaciones de Primer Grado</h1>
     
     <div class="info-ecuaciones">
-        <h2>¿Qué es una Ecuación de Primer Grado?</h2>
+        <h2>1. ¿Qué es una Ecuación de Primer Grado?</h2>
         <p>Una <strong>ecuación de primer grado</strong> es una igualdad algebraica que contiene una variable con exponente 1. Se llama así porque la variable tiene un grado (potencia) de 1.</p>
         
-        <h3>Forma General:</h3>
-        <p><strong>ax + b = c</strong></p>
+        <h3>Forma General</h3>
+        <div class="formula">ax + b = c</div>
+        <p>Donde:</p>
         <ul>
             <li><strong>a:</strong> Coeficiente de la variable (no puede ser cero)</li>
             <li><strong>x:</strong> La variable (incógnita)</li>
             <li><strong>b:</strong> Término independiente</li>
             <li><strong>c:</strong> El resultado de la igualdad</li>
         </ul>
+
+        <h2>2. Conceptos Fundamentales</h2>
         
-        <h3>Pasos para Resolver:</h3>
+        <h3>a) Miembros de la Ecuación</h3>
+        <p>Una ecuación tiene dos miembros separados por el signo igual (=).</p>
+        <div class="formula">Miembro izquierdo = Miembro derecho</div>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Ejemplo: 2x + 3 = 11</div>
+            <p><strong>Miembro izquierdo:</strong> 2x + 3</p>
+            <p><strong>Miembro derecho:</strong> 11</p>
+        </div>
+
+        <h3>b) Resolución de Ecuaciones</h3>
+        <p>Resolver una ecuación significa encontrar el valor de la variable que hace que la igualdad sea verdadera. Este valor se llama <strong>solución</strong> o <strong>raíz</strong> de la ecuación.</p>
+
+        <h3>c) Equivalencia de Ecuaciones</h3>
+        <p>Dos ecuaciones son equivalentes si tienen las mismas soluciones. Durante la resolución, realizamos operaciones que generan ecuaciones equivalentes.</p>
+
+        <h2>3. Pasos para Resolver una Ecuación de Primer Grado</h2>
+        
+        <h3>Método General</h3>
         <ol>
-            <li>Escribe la ecuación en la forma ax + b = c</li>
-            <li>Resta b de ambos lados: ax = c - b</li>
-            <li>Divide entre a: x = (c - b) / a</li>
+            <li>Agrupa los términos con la variable en el miembro izquierdo</li>
+            <li>Agrupa los términos sin la variable en el miembro derecho</li>
+            <li>Simplifica ambos miembros</li>
+            <li>Divide ambos miembros entre el coeficiente de la variable</li>
+            <li>Verifica la solución sustituyendo en la ecuación original</li>
         </ol>
+
+        <h2>4. Ejemplos Resueltos Paso a Paso</h2>
         
-        <h3>Ejemplo Práctico:</h3>
-        <p>Resolver: <strong>2x + 3 = 11</strong></p>
-        <p>x = (11 - 3) / 2 = 8 / 2 = <strong>4</strong></p>
+        <h3>Ejemplo 1: Ecuación Simple</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 2x + 3 = 11</div>
+            <p><strong>Paso 1:</strong> Restar 3 de ambos lados</p>
+            <p style="margin-left: 20px;">2x + 3 - 3 = 11 - 3</p>
+            <p style="margin-left: 20px;">2x = 8</p>
+            <p><strong>Paso 2:</strong> Dividir ambos lados entre 2</p>
+            <p style="margin-left: 20px;">x = 8 ÷ 2</p>
+            <p><strong>Solución:</strong> x = 4</p>
+            <p><strong>Verificación:</strong> 2(4) + 3 = 8 + 3 = 11 ✓</p>
+        </div>
+
+        <h3>Ejemplo 2: Ecuación con Variables en Ambos Lados</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: 3x - 2 = x + 6</div>
+            <p><strong>Paso 1:</strong> Agrupar variables. Restar x de ambos lados</p>
+            <p style="margin-left: 20px;">3x - x - 2 = x - x + 6</p>
+            <p style="margin-left: 20px;">2x - 2 = 6</p>
+            <p><strong>Paso 2:</strong> Sumar 2 a ambos lados</p>
+            <p style="margin-left: 20px;">2x - 2 + 2 = 6 + 2</p>
+            <p style="margin-left: 20px;">2x = 8</p>
+            <p><strong>Paso 3:</strong> Dividir entre 2</p>
+            <p style="margin-left: 20px;">x = 4</p>
+            <p><strong>Verificación:</strong> 3(4) - 2 = 12 - 2 = 10; 4 + 6 = 10 ✓</p>
+        </div>
+
+        <h3>Ejemplo 3: Ecuación con Números Negativos</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: -2x + 5 = 9</div>
+            <p><strong>Paso 1:</strong> Restar 5 de ambos lados</p>
+            <p style="margin-left: 20px;">-2x + 5 - 5 = 9 - 5</p>
+            <p style="margin-left: 20px;">-2x = 4</p>
+            <p><strong>Paso 2:</strong> Dividir entre -2</p>
+            <p style="margin-left: 20px;">x = 4 ÷ (-2)</p>
+            <p style="margin-left: 20px;">x = -2</p>
+            <p><strong>Verificación:</strong> -2(-2) + 5 = 4 + 5 = 9 ✓</p>
+        </div>
+
+        <h3>Ejemplo 4: Ecuación con Fracciones</h3>
+        <div class="ejemplo">
+            <div class="ejemplo-titulo">Resolver: (x/2) + 3 = 7</div>
+            <p><strong>Paso 1:</strong> Restar 3 de ambos lados</p>
+            <p style="margin-left: 20px;">x/2 = 4</p>
+            <p><strong>Paso 2:</strong> Multiplicar ambos lados por 2</p>
+            <p style="margin-left: 20px;">x = 8</p>
+            <p><strong>Verificación:</strong> (8/2) + 3 = 4 + 3 = 7 ✓</p>
+        </div>
+
+        <h2>5. Propiedades Fundamentales</h2>
+        
+        <h3>Propiedad de Igualdad Aditiva</h3>
+        <p>Si a = b, entonces a + c = b + c</p>
+        <p>Podemos sumar o restar el mismo número a ambos lados de una ecuación sin cambiar la solución.</p>
+
+        <h3>Propiedad de Igualdad Multiplicativa</h3>
+        <p>Si a = b, entonces a × c = b × c (donde c ≠ 0)</p>
+        <p>Podemos multiplicar o dividir ambos lados de una ecuación por el mismo número (excepto cero) sin cambiar la solución.</p>
+
+        <h2>6. Aplicaciones Prácticas</h2>
+        <ul>
+            <li><strong>Finanzas:</strong> Calcular montos desconocidos en transacciones</li>
+            <li><strong>Física:</strong> Resolver problemas de movimiento y fuerzas</li>
+            <li><strong>Química:</strong> Balancear ecuaciones químicas</li>
+            <li><strong>Economía:</strong> Encontrar puntos de equilibrio en oferta y demanda</li>
+            <li><strong>Administración:</strong> Calcular costos y ganancias</li>
+        </ul>
+
+        <h2>7. Referencias y Recursos</h2>
+        <div class="recursos">
+            <h3>📚 Libros Recomendados</h3>
+            <ul>
+                <li>Baldor, A. (2006). <em>Álgebra Elemental</em>. Grupo Editorial Patria.</li>
+                <li>Jiménez, R. (2011). <em>Matemáticas I</em>. Pearson Educación.</li>
+                <li>Zill, D. & Dewar, J. (2012). <em>Álgebra, Trigonometría y Geometría Analítica</em>. McGraw-Hill.</li>
+            </ul>
+            <h3>🌐 Recursos en Español</h3>
+            <ul>
+                <li><a href="https://es.khanacademy.org/math/algebra-home" target="_blank">Khan Academy España - Álgebra</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=ecuaciones+primer+grado+español" target="_blank">YouTube - Tutoriales de Ecuaciones en Español</a></li>
+                <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">Matemáticas profe Alex - Canal de YouTube</a></li>
+            </ul>
+            <h3>📹 Canales Educativos en Español</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/@MatematicasprofeAlex" target="_blank">🎬 Matemáticas profe Alex</a></li>
+                <li><a href="https://www.youtube.com/@julioprofe" target="_blank">🎬 Julio Profe - Matemáticas</a></li>
+                <li><a href="https://www.youtube.com/results?search_query=ecuaciones+de+primer+grado+explicacion+español" target="_blank">🔍 Búsqueda: Ecuaciones de Primer Grado</a></li>
+            </ul>
+        </div>
     </div>
+
+    <h2>8. Calculadora Interactiva</h2>
     
     <form method="post">
         {% csrf_token %}
         <label for="a">Coeficiente a (para ax):</label>
-        <input type="number" name="a" id="a" placeholder="ingresa a" required>
+        <input type="number" name="a" id="a" placeholder="ingresa a" required step="any">
         
         <label for="b">Término b:</label>
-        <input type="number" name="b" id="b" placeholder="ingresa b" required>
+        <input type="number" name="b" id="b" placeholder="ingresa b" required step="any">
         
         <label for="c">Resultado c:</label>
-        <input type="number" name="c" id="c" placeholder="ingresa c" required>
+        <input type="number" name="c" id="c" placeholder="ingresa c" required step="any">
         
-        <p>Resolviendo: <strong>ax + b = c</strong></p>
+        <p><strong>Resolviendo: ax + b = c</strong></p>
         <button type="submit">Resolver Ecuación</button>
     </form>
+    
     {% if error %}
-        <h2 style="color:crimson">Error: {{ error }}</h2>
+        <div class="error">
+            <strong>❌ Error:</strong> {{ error }}
+        </div>
     {% elif resultado is not None %}
-        <h2>Solución: x = {{ resultado }}</h2>
+        <div class="resultado">
+            <strong>✅ Solución:</strong> x = {{ resultado }}
+        </div>
     {% endif %}
 
-</body>
-</html>
+{% endblock %}

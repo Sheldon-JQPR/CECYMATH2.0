@@ -1,12 +1,10 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
-    <title>Recta Numérica</title>
-</head>
-<body>
-    <h1>Addon de Recta Numérica</h1>
+
+{% block title %}Recta Numérica - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>📏 Recta Numérica</h1>
     
     <div class="info-recta">
         <h2>¿Qué es una Recta Numérica?</h2>
@@ -45,24 +43,27 @@
     </form>
     
     {% if error %}
-        <h2 style="color:crimson">Error: {{ error }}</h2>
+        <div class="error">
+            <strong>❌ Error:</strong> {{ error }}
+        </div>
     {% elif numeros %}
-        <h2>Recta Numérica:</h2>
-        <div style="text-align:center; font-size:18px; letter-spacing:5px;">
-            <span style="color: #7f8c8d; font-size: 24px; font-weight: bold;">-∞</span>
-            &nbsp;&nbsp;&nbsp;
-            {% for num in numeros %}
-                {% if num == 0 %}
-                    <strong style="color:red; background: #fff3cd; padding: 5px 8px; border-radius: 4px;">{{ num }}</strong>
-                {% else %}
-                    {{ num }}
-                {% endif %}
-                {% if not forloop.last %}&nbsp;&nbsp;&nbsp;{% endif %}
-            {% endfor %}
-            &nbsp;&nbsp;&nbsp;
-            <span style="color: #7f8c8d; font-size: 24px; font-weight: bold;">+∞</span>
+        <div class="resultado">
+            <h2>Recta Numérica:</h2>
+            <div style="text-align:center; font-size:18px; letter-spacing:5px; margin: 20px 0;">
+                <span style="color: #7f8c8d; font-size: 24px; font-weight: bold;">-∞</span>
+                &nbsp;&nbsp;&nbsp;
+                {% for num in numeros %}
+                    {% if num == 0 %}
+                        <strong style="color:red; background: #fff3cd; padding: 5px 8px; border-radius: 4px;">{{ num }}</strong>
+                    {% else %}
+                        {{ num }}
+                    {% endif %}
+                    {% if not forloop.last %}&nbsp;&nbsp;&nbsp;{% endif %}
+                {% endfor %}
+                &nbsp;&nbsp;&nbsp;
+                <span style="color: #7f8c8d; font-size: 24px; font-weight: bold;">+∞</span>
+            </div>
         </div>
     {% endif %}
 
-</body>
-</html>
+{% endblock %}

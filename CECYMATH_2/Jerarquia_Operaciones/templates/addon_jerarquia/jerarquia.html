@@ -1,12 +1,10 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static "estilo/estilo.css" %}">
-    <title>Jerarquía de Operaciones</title>
-</head>
-<body>
-    <h1>Addon de Jerarquía de Operaciones</h1>
+
+{% block title %}Jerarquía de Operaciones - CECYMATH 2.0{% endblock %}
+
+{% block content %}
+    <h1>⚙️ Jerarquía de Operaciones</h1>
     
     <div class="info-jerarquia">
         <h2>¿Qué es la Jerarquía de Operaciones?</h2>
@@ -44,11 +42,14 @@
     </form>
     
     {% if error %}
-        <h2 style="color:crimson">Error: {{ error }}</h2>
+        <div class="error">
+            <strong>❌ Error:</strong> {{ error }}
+        </div>
     {% elif resultado is not None %}
-        <h2>Expresión: {{ expresion }}</h2>
-        <h2>Resultado: {{ resultado }}</h2>
+        <div class="resultado">
+            <p><strong>Expresión:</strong> {{ expresion }}</p>
+            <strong>✅ Resultado:</strong> {{ resultado }}
+        </div>
     {% endif %}
 
-</body>
-</html>
+{% endblock %}
